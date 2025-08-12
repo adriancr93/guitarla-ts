@@ -7,7 +7,7 @@ export type Guitar = {
 }
 
 
-export type CarItem = Guitar& {
+export type CartItem = Guitar& {
     quantity: number
 }
 
