@@ -1,24 +1,17 @@
 import { useReducer } from 'react'
 import Header from './components/Header'
 import Guitar from './components/Guitar'
-import { useCart } from './hooks/useCart'
 import { cartReducer, initiateState } from './reducer/cart-reducer'
 
 function App() {
-  
-  const { cart, removeFromCart, decreaseQuantity, increaseQuantity, clearCart, isEmpty, cartTotal } = useCart()
+
   const [state, dispatch] = useReducer(cartReducer, initiateState)
 
   return (
     <>
     <Header
-      cart={cart}
-      removeFromCart={removeFromCart}
-      increaseQuantity={increaseQuantity}
-      decreaseQuantity={decreaseQuantity}
-      clearCart={clearCart}
-      isEmpty={isEmpty}
-      cartTotal={cartTotal}
+      cart={state.cart}
+      dispatch={dispatch}
     />
 
     <main className="container-xl mt-5">
